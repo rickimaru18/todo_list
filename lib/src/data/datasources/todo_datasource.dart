@@ -53,7 +53,7 @@ class TodoDataSource {
     return _box.watch();
   }
 
-  /// Update data with [data] to box.
+  /// Update data with [id] to box.
   Future<void> update(int id, Todo data) async {
     _initCheck();
     await _box.put(id, data);
