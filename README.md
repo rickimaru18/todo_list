@@ -1,16 +1,13 @@
-# todo_list
+# Todo List
 
-A new Flutter project.
+A simple TODO app.
 
-## Getting Started
+<img width="342" alt="image" src="https://user-images.githubusercontent.com/13028267/194715342-eee96338-6b2b-4c47-b627-a555e4d66e0e.png">
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Setup
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter: 3.3.4
+- Architecture: CLEAN
+- Branching strategy: [Trunk Based Development](https://trunkbaseddevelopment.com)
+- Commit strategy: [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/)
