@@ -44,8 +44,6 @@ void main() {
   });
 
   test('Update [Todo] from [TodoDataSource]', () async {
-    when(dataSource.update(any, any)).thenAnswer((_) async {});
-
     const int id = 123;
     final Todo todo = Todo(task: 'sample');
     await repository.update(id, todo);
@@ -55,8 +53,6 @@ void main() {
   });
 
   test('Remove [Todo] from [TodoDataSource]', () async {
-    when(dataSource.update(any, any)).thenAnswer((_) async {});
-
     final Todo todo = Todo(task: 'sample');
     await repository.remove(todo);
 
