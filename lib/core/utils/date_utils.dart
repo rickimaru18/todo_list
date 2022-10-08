@@ -24,3 +24,10 @@ int compareDatesNullable(
 
   return res;
 }
+
+//------------------------------------------------------------------------------
+extension DateExt on DateTime {
+  /// Check of [other] has the same [year], [month], and [day].
+  bool isSameYMD(DateTime other) =>
+      year == other.year && month == other.month && day == other.day;
+}
