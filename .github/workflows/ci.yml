@@ -1,0 +1,41 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  flutter_analyzer:
+    name: Lint checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '8'
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '3.3.4'
+          channel: 'stable'
+      - run: flutter pub get
+      - name: Run analyzer
+        run: flutter analyze
+
+  flutter_unit_widget_test:
+    name: Unit and widget tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '8'
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '3.3.4'
+          channel: 'stable'
+      - run: flutter pub get
+      - name: Run tests
+        run: flutter test --coverage
+  
+  
