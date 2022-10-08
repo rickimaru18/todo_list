@@ -29,7 +29,7 @@ class Todo extends HiveObject {
   @HiveField(3)
   final bool isCompleted;
 
-  int get id => key as int;
+  int get id => key as int? ?? -1;
 }
 
 //------------------------------------------------------------------------------
