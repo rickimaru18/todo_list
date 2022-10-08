@@ -12,8 +12,8 @@ void main() {
     WidgetTester tester, {
     ValueChanged<bool>? onConfirm,
     String? description,
-  }) {
-    return buildWidget(
+  }) async {
+    await buildWidget(
       tester,
       Builder(
         builder: (BuildContext context) => TextButton(
@@ -29,14 +29,14 @@ void main() {
         ),
       ),
     );
+
+    await tester.tap(find.text('show'));
+    await tester.pumpAndSettle();
   }
 
   group('[UI checks]', () {
     testWidgets('No description', (WidgetTester tester) async {
       await buildWidgetTmp(tester);
-
-      await tester.tap(find.text('show'));
-      await tester.pumpAndSettle();
 
       expect(find.byType(AlertDialog), findsOneWidget);
       expect(find.widgetWithText(AlertDialog, title), findsOneWidget);
@@ -47,9 +47,6 @@ void main() {
 
     testWidgets('With description', (WidgetTester tester) async {
       await buildWidgetTmp(tester, description: description);
-
-      await tester.tap(find.text('show'));
-      await tester.pumpAndSettle();
 
       expect(find.byType(AlertDialog), findsOneWidget);
       expect(find.widgetWithText(AlertDialog, title), findsOneWidget);
@@ -65,9 +62,6 @@ void main() {
 
       await buildWidgetTmp(tester, onConfirm: (bool value) => res = value);
 
-      await tester.tap(find.text('show'));
-      await tester.pumpAndSettle();
-
       expect(find.byType(AlertDialog), findsOneWidget);
       expect(res, null);
 
@@ -82,9 +76,6 @@ void main() {
       bool? res;
 
       await buildWidgetTmp(tester, onConfirm: (bool value) => res = value);
-
-      await tester.tap(find.text('show'));
-      await tester.pumpAndSettle();
 
       expect(find.byType(AlertDialog), findsOneWidget);
       expect(res, null);
