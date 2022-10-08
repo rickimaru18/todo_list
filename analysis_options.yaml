@@ -25,6 +25,7 @@ analyzer:
     deprecated_member_use_from_same_package: ignore
     # Turned off until null-safe rollout is complete.
     unnecessary_null_comparison: ignore
+    todo: warning
   exclude:
     - "bin/cache/**"
       # Ignore protoc generated files
@@ -108,7 +109,7 @@ linter:
     - eol_at_end_of_file
     - exhaustive_cases
     - file_names
-    - flutter_style_todos
+    # - flutter_style_todos
     - hash_and_equals
     - implementation_imports
     - iterable_contains_unrelated_type

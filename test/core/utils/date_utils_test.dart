@@ -43,4 +43,26 @@ void main() {
       expect(res, 1);
     });
   });
+
+  group('[DateExt checks]', () {
+    test('"isSameYMD" checks', () {
+      DateTime d1 = DateTime(2022);
+      DateTime d2 = DateTime(2022);
+
+      bool res = d1.isSameYMD(d2);
+      expect(res, true);
+
+      d1 = d1.add(const Duration(days: 1));
+      res = d1.isSameYMD(d2);
+      expect(res, false);
+
+      d2 = d1.add(const Duration(days: 1));
+      res = d1.isSameYMD(d2);
+      expect(res, false);
+
+      d1 = d2.add(const Duration(hours: 23));
+      res = d1.isSameYMD(d2);
+      expect(res, true);
+    });
+  });
 }
