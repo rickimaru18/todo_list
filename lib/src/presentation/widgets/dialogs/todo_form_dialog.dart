@@ -78,7 +78,7 @@ class _TodoFormState extends State<_TodoForm> {
         TextFormField(
           validator: (String? value) => value?.trim().isNotEmpty ?? false
               ? null
-              : 'This is a required field.',
+              : 'This is a required field',
           controller: _taskController,
           decoration: const InputDecoration(
             labelText: 'Task name',
