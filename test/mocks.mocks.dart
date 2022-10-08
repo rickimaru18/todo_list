@@ -10,6 +10,7 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:todo_list/src/data/datasources/todo_datasource.dart' as _i3;
 import 'package:todo_list/src/data/repositories/todo_repository.dart' as _i6;
 import 'package:todo_list/src/domain/entities/todo.dart' as _i2;
+import 'package:todo_list/src/domain/usecases/todo_usecase.dart' as _i7;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -164,6 +165,80 @@ class MockTodoRepository extends _i1.Mock implements _i6.TodoRepository {
   _i4.Future<void> remove(_i2.Todo? todo) => (super.noSuchMethod(
         Invocation.method(
           #remove,
+          [todo],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
+}
+
+/// A class which mocks [TodoUsecase].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockTodoUsecase extends _i1.Mock implements _i7.TodoUsecase {
+  MockTodoUsecase() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Todo> add(_i2.Todo? todo) => (super.noSuchMethod(
+        Invocation.method(
+          #add,
+          [todo],
+        ),
+        returnValue: _i4.Future<_i2.Todo>.value(_FakeTodo_0(
+          this,
+          Invocation.method(
+            #add,
+            [todo],
+          ),
+        )),
+      ) as _i4.Future<_i2.Todo>);
+  @override
+  List<_i2.Todo> getAll() => (super.noSuchMethod(
+        Invocation.method(
+          #getAll,
+          [],
+        ),
+        returnValue: <_i2.Todo>[],
+      ) as List<_i2.Todo>);
+  @override
+  _i4.Stream<_i5.BoxEvent> listen() => (super.noSuchMethod(
+        Invocation.method(
+          #listen,
+          [],
+        ),
+        returnValue: _i4.Stream<_i5.BoxEvent>.empty(),
+      ) as _i4.Stream<_i5.BoxEvent>);
+  @override
+  _i4.Future<void> update(
+    int? id,
+    _i2.Todo? todo,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #update,
+          [
+            id,
+            todo,
+          ],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
+  @override
+  _i4.Future<void> remove(_i2.Todo? todo) => (super.noSuchMethod(
+        Invocation.method(
+          #remove,
+          [todo],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
+  @override
+  _i4.Future<void> complete(_i2.Todo? todo) => (super.noSuchMethod(
+        Invocation.method(
+          #complete,
           [todo],
         ),
         returnValue: _i4.Future<void>.value(),

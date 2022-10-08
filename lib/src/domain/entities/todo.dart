@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 
 part 'todo.g.dart';
@@ -29,7 +30,11 @@ class Todo extends HiveObject {
   @HiveField(3)
   final bool isCompleted;
 
-  int get id => key as int? ?? -1;
+  /// Only use for widget/unit testing.
+  @visibleForTesting
+  int? testKey;
+
+  int get id => key as int? ?? testKey ?? -1;
 }
 
 //------------------------------------------------------------------------------
